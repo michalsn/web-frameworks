@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.struts.benchmarker</groupId>
-    <artifactId>struts2</artifactId>
-    <version>1.0</version>
+    <artifactId>server</artifactId>
+    <version>1.0.0</version>
     <packaging>war</packaging>
-    <name>struts2</name>
+    <name>server</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -37,7 +37,7 @@
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-runner</artifactId>
+            <artifactId>jetty-maven-plugin</artifactId>
             <version>9.4.30.v20200611</version>
         </dependency>
 
@@ -54,6 +54,27 @@
                     <target>1.8</target>
                     <optimize>true</optimize>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>copy</goal></goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.eclipse.jetty</groupId>
+                                    <artifactId>jetty-runner</artifactId>
+                                    <version>9.4.30.v20200611</version>
+                                    <destFileName>jetty-runner.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

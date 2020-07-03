@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>benchmark.spring-boot</groupId>
-	<artifactId>benchmark</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>benchmark</name>
+	<artifactId>server</artifactId>
+	<version>1.0.0</version>
+	<name>server</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

@@ -8,6 +8,9 @@ sources:
   - src/**/*.java
   - pom.xml
 
+binaries:
+  - target/server-1.0.0.jar
+
 files:
   - src/**/*.properties
   - src/**/*.xml 

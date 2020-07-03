@@ -5,10 +5,14 @@ framework:
 alpine-deps:
   - bash
 
+build:
+  - mvn package
+  - mv target/dist/server-1.0.0-*.tar.gz target/dist/server-1.0.0.tar.gz
+
 binaries:
-  - target/dist/*.tar.gz
+  - target/dist/server-1.0.0.tar.gz
 
 bootstrap:
-  - tar -xvzf target/dist/*.tar.gz
+  - tar -xvzf target/dist/server-1.0.0.tar.gz
 
 command: /opt/web/run
