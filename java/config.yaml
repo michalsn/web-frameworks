@@ -6,12 +6,12 @@ provider:
 
 sources:
   - src/**/*.java
-  - src/**/*.properties
   - pom.xml
-  - src/main/webapp/WEB-INF/web.xml
 
-binaries:
-  - target/*.jar
+files:
+  - src/**/*.properties
+  - src/**/*.xml 
+  - src/**/*.jsp
 
 deps:
   - java-1.8.0-openjdk
