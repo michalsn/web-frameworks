@@ -40,9 +40,9 @@ WORKDIR /opt/web
   RUN {{{.}}}
 {{/bootstrap}}
 
-{{#alpine-deps}}
-  RUN apk add {{{.}}}
-{{/alpine-deps}}
+{{#fixes}}
+  RUN {{{.}}}
+{{/fixes}}
 
 {{#environment}}
   ENV {{{.}}}
