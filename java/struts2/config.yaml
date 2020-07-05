@@ -7,6 +7,8 @@ build:
 
 binaries:
   - target/server-1.0.0.war
-  - target/dependency/jetty-runner.jar
 
-command: /usr/bin/java -XX:+UseNUMA -XX:+UseParallelGC -XX:+AggressiveOpts -jar /opt/web/target/target/dependency/jetty-runner.jar --port 3000 /opt/web/target/server-1.0.0.war
+alpine-deps:
+  - jetty-runner
+
+command: /usr/bin/java -XX:+UseNUMA -XX:+UseParallelGC -XX:+AggressiveOpts -jar /usr/share/java/jetty-runner.jar --port 3000 /opt/web/target/server-1.0.0.war
